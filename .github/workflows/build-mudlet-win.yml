@@ -19,8 +19,16 @@ jobs:
       - uses: msys2/setup-msys2@v2
         with:
           msystem: MINGW32
-          update: true
-          install: git mingw-w64-i686-gcc
+          #update: true
+          #install: git mingw-w64-i686-gcc
+      - name: Echo environment information
+        run: |
+          echo "MSYS2 installation path: $MSYSTEM_PREFIX"
+          echo "Home directory: $HOME"
+          echo "GitHub Workspace: $GITHUB_WORKSPACE"
+          echo "Runner temp directory: $RUNNER_TEMP"
+          where bash
+          where msys2
       - name: Make script executable
         run: chmod +x $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh
       - name: CI-Build
