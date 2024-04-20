@@ -27,10 +27,12 @@ jobs:
           echo "Home directory: $HOME"
           echo "GitHub Workspace: $GITHUB_WORKSPACE"
           echo "Runner temp directory: $RUNNER_TEMP"
+          echo "Current PATH: $PATH"
       - name: Make script executable
         run: chmod +x $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh
       - name: CI-Build
         run: |
           echo 'Running in MSYS2!'
+          export PATH="C:\Program Files\Git\bin:$PATH"
           bash $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh base
 
