@@ -24,5 +24,6 @@ jobs:
       - name: CI-Build
         run: |
           echo 'Running in MSYS2!'
-          ${{github.workspace}}/CI/setup-windows.sdk.sh base
+          cd $GITHUB_WORKSPACE/CI
+          ./setup-windows.sdk.sh base
 
