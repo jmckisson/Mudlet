@@ -27,8 +27,6 @@ jobs:
           echo "Home directory: $HOME"
           echo "GitHub Workspace: $GITHUB_WORKSPACE"
           echo "Runner temp directory: $RUNNER_TEMP"
-          where bash
-          where msys2
       - name: Make script executable
         run: chmod +x $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh
       - name: CI-Build

@@ -82,7 +82,7 @@ else
 fi
 
 # We use this internally - but it is actually the same as ${MINGW_PREFIX}
-export MINGW_BASE_DIR="C:/msys64/mingw${BUILD_BITNESS}"
+export MINGW_BASE_DIR=$MSYSTEM_PREFIX
 # A more compact - but not necessarily understood by other than MSYS/MINGW
 # executables - path:
 export MINGW_INTERNAL_BASE_DIR="/mingw${BUILD_BITNESS}"
