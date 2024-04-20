@@ -1,0 +1,30 @@
+name: 🔨 Build Mudlet Windows
+on:
+  push:
+    branches: [medievia-bash]
+    tags: [Mudlet-*]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'
+
+jobs:
+  msys2-mingw32:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW32
+          update: true
+          install: git mingw-w64-i686-gcc
+      - name: Change to CI directory
+          run: cd CI
+      - name: CI-Build
+        run: |
+          echo 'Running in MSYS2!'
+          ./setup-windows.sdk.sh base
+
