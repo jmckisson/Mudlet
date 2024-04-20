@@ -22,7 +22,7 @@ jobs:
           update: true
           install: git mingw-w64-i686-gcc
       - name: Change to CI directory
-          run: cd CI
+        run: cd CI
       - name: CI-Build
         run: |
           echo 'Running in MSYS2!'
