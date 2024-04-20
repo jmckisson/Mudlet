@@ -188,13 +188,9 @@ else
 fi
 echo ""
 
-echo "Listing C:/etc"
-ls /etc
 echo "Listing ${MINGW_INTERNAL_BASE_DIR}/etc:"
-ls /c/${MINGW_INTERNAL_BASE_DIR}/etc
-echo "Listing c/msys64/etc:"
-ls /c/msys64/etc
-find / | grep luarocks
+ls ${MINGW_INTERNAL_BASE_DIR}/etc
+
 
 if [ $(grep -c "/.luarocks-${MSYSTEM}" ${MINGW_INTERNAL_BASE_DIR}/etc/luarocks/config-5.1.lua) -eq 0 ]; then
   # The luarocks config file has not been tweaked to put the compiled rocks in
