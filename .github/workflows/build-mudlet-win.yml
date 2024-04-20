@@ -37,5 +37,7 @@ jobs:
           export PATH="/c/Program Files/Git/bin:$PATH"
           $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh base
       - name: Mudlet Build
-        run: $GITHUB_WORKSPACE/CI/build-mudlet-for-windows.sh release
+        run: |
+          export BUILD_CONFIG=release
+          $GITHUB_WORKSPACE/CI/build-mudlet-for-windows.sh
 
