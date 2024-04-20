@@ -94,8 +94,7 @@ echo "MSYSTEM is: ${MSYSTEM}"
 echo "PATH is now: ${PATH}"
 echo ""
 
-env
-ls ${MINGW_INTERNAL_BASE_DIR}
+ls ${MINGW_INTERNAL_BASE_DIR}/etc
 
 # Options to consider:
 # --Sy = Sync, refresh as well as installing the specified packages
@@ -162,8 +161,6 @@ if [ "${LEVEL}" = "full" ]; then
     "mingw-w64-${BUILDCOMPONENT}-yajl" \
     "mingw-w64-${BUILDCOMPONENT}-lua-luarocks"
 fi
-
-which git
 
 echo ""
 echo "    Completed"
