@@ -94,6 +94,8 @@ echo "MSYSTEM is: ${MSYSTEM}"
 echo "PATH is now: ${PATH}"
 echo ""
 
+ls ${MINGW_INTERNAL_BASE_DIR}
+
 # Options to consider:
 # --Sy = Sync, refresh as well as installing the specified packages
 # --noconfirm = do not ask for user intervention
@@ -159,6 +161,8 @@ if [ "${LEVEL}" = "full" ]; then
     "mingw-w64-${BUILDCOMPONENT}-yajl" \
     "mingw-w64-${BUILDCOMPONENT}-lua-luarocks"
 fi
+
+which git
 
 echo ""
 echo "    Completed"
@@ -287,15 +291,15 @@ echo "  you to build and work on the project..."
 echo ""
 mkdir -p ~/src
 cd ~/src || exit 1
-if [ ! -d "./mudlet" ]; then
-    echo "    Cloning the Mudlet project's source code..."
-    echo ""
-    git clone https://github.com/Mudlet/Mudlet.git mudlet
-else
-    echo "    There is already a ${HOME}/src/mudlet"
-    echo "    directory so it seems that there is no need to clone the Mudlet"
-    echo "    project's source code..."
-fi
+#if [ ! -d "./mudlet" ]; then
+#    echo "    Cloning the Mudlet project's source code..."
+#    echo ""
+#    git clone https://github.com/Mudlet/Mudlet.git mudlet
+#else
+#    echo "    There is already a ${HOME}/src/mudlet"
+#    echo "    directory so it seems that there is no need to clone the Mudlet"
+#    echo "    project's source code..."
+#fi
 echo ""
 if [ "${success}" = "true" ]; then
   echo "    ... Completed, all rocks installed."

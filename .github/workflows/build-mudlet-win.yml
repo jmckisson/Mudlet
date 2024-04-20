@@ -33,6 +33,6 @@ jobs:
       - name: CI-Build
         run: |
           echo 'Running in MSYS2!'
-          export PATH="C:\Program Files\Git\bin:$PATH"
+          export PATH="/c/Program Files/Git/bin:$PATH"
           bash $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh base
 
