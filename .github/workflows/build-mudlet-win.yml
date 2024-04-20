@@ -21,10 +21,8 @@ jobs:
           msystem: MINGW32
           update: true
           install: git mingw-w64-i686-gcc
-      - name: Change to CI directory
-        run: cd ${{github.workspace}}/CI
       - name: CI-Build
         run: |
           echo 'Running in MSYS2!'
-          ./setup-windows.sdk.sh base
+          ${{github.workspace}}/CI/setup-windows.sdk.sh base
 
