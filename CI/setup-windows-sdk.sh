@@ -145,6 +145,7 @@ if [ "${LEVEL}" = "full" ]; then
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-speech
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-imageformats
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-winextras
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-tools
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-pcre
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-libzip
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-ntldd
