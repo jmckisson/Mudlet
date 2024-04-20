@@ -94,14 +94,6 @@ echo "MSYSTEM is: ${MSYSTEM}"
 echo "PATH is now: ${PATH}"
 echo ""
 
-echo "Listing C:/etc"
-ls /etc
-echo "Listing ${MINGW_INTERNAL_BASE_DIR}/etc:"
-ls /c/${MINGW_INTERNAL_BASE_DIR}/etc
-echo "Listing c/msys64/etc:"
-ls /c/msys64/etc
-
-
 # Options to consider:
 # --Sy = Sync, refresh as well as installing the specified packages
 # --noconfirm = do not ask for user intervention
@@ -196,6 +188,14 @@ else
   fi
 fi
 echo ""
+
+echo "Listing C:/etc"
+ls /etc
+echo "Listing ${MINGW_INTERNAL_BASE_DIR}/etc:"
+ls /c/${MINGW_INTERNAL_BASE_DIR}/etc
+echo "Listing c/msys64/etc:"
+ls /c/msys64/etc
+find / | grep luarocks
 
 if [ $(grep -c "/.luarocks-${MSYSTEM}" ${MINGW_INTERNAL_BASE_DIR}/etc/luarocks/config-5.1.lua) -eq 0 ]; then
   # The luarocks config file has not been tweaked to put the compiled rocks in
