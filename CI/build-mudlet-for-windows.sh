@@ -94,10 +94,10 @@ else
 fi
 echo ""
 
-cd ~/src/mudlet || exit 1
+cd $GITHUB_WORKSPACE || exit 1
 mkdir -p "build-${MSYSTEM}"
 
-cd ~/src/mudlet/build-"${MSYSTEM}" || exit 1
+cd ${GITHUB_WORKSPACE}/build-"${MSYSTEM}" || exit 1
 
 #### Qt Creator note ####
 # If one is planning to use qtcreator these will probably be wanted in a

@@ -138,7 +138,7 @@ if [ "${LEVEL}" = "full" ]; then
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar man
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar rsync
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-toolchain
-    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-base
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-base-debug
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-multimedia-debug
     /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-svg-debug
@@ -187,9 +187,6 @@ else
   fi
 fi
 echo ""
-
-echo "Listing ${MINGW_INTERNAL_BASE_DIR}/etc:"
-ls ${MINGW_INTERNAL_BASE_DIR}/etc
 
 
 if [ $(grep -c "/.luarocks-${MSYSTEM}" ${MINGW_INTERNAL_BASE_DIR}/etc/luarocks/config-5.1.lua) -eq 0 ]; then
@@ -284,12 +281,12 @@ done
 echo ""
 echo "    ... luarocks installation completed"
 echo ""
-echo "  Making a ${HOME}/src directory (if it does not exist)"
-echo "  - so there is a place to put a local Mudlet git repository for"
-echo "  you to build and work on the project..."
-echo ""
-mkdir -p ~/src
-cd ~/src || exit 1
+#echo "  Making a ${HOME}/src directory (if it does not exist)"
+#echo "  - so there is a place to put a local Mudlet git repository for"
+#echo "  you to build and work on the project..."
+#echo ""
+#mkdir -p ~/src
+#cd ~/src || exit 1
 #if [ ! -d "./mudlet" ]; then
 #    echo "    Cloning the Mudlet project's source code..."
 #    echo ""

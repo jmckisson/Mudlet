@@ -28,11 +28,14 @@ jobs:
           echo "GitHub Workspace: $GITHUB_WORKSPACE"
           echo "Runner temp directory: $RUNNER_TEMP"
           echo "Current PATH: $PATH"
-      - name: Make script executable
-        run: chmod +x $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh
-      - name: CI-Build
+      - name: Make scripts executable
         run: |
-          echo 'Running in MSYS2!'
+          chmod +x $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh
+          chmod +x $GITHUB_WORKSPACE/CI/build-mudlet-for-windows.sh
+      - name: Mudlet Build Environment Setup
+        run: |
           export PATH="/c/Program Files/Git/bin:$PATH"
           $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh base
+      - name: Mudlet Build
+        run: $GITHUB_WORKSPACE/CI/build-mudlet-for-windows.sh
 
