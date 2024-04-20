@@ -381,6 +381,7 @@ unix:!macx {
              "$${MINGW_BASE_DIR_TEST}\\lib\\include"
 
     } else {
+
         # For users/developers building with MSYS2 on Windows:
         isEmpty( MINGW_BASE_DIR_TEST ) {
             error($$escape_expand("Build aborted as environmental variable MINGW_BASE_DIR not set to the root of \\n"\
@@ -391,13 +392,15 @@ unix:!macx {
 "'C:\msys64\mingw32' {64 Bit Mudlet built on a 64 Bit Host}\\n"))
         }
         LIBS +=  \
-            -L$${MINGW_BASE_DIR_TEST}/bin \
+            -L$${MINGW_BASE_DIR}/bin \
             -llua5.1 \
-            -llibhunspell-1.7
+            -llibhunspell-1.7-0
 
         INCLUDEPATH += \
-            $${MINGW_BASE_DIR_TEST}/include/lua5.1 \
-             $${MINGW_BASE_DIR_TEST}/include/pugixml
+            $${MINGW_BASE_DIR}/include/lua5.1 \
+            $${MINGW_BASE_DIR}/include/pugixml
+             
+        message("MSYS2 environment, Lua include directory "$${MINGW_BASE_DIR}/include/lua5.1"...")
     }
 
     LIBS += \
