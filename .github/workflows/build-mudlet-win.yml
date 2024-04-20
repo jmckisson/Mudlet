@@ -34,5 +34,5 @@ jobs:
         run: |
           echo 'Running in MSYS2!'
           export PATH="/c/Program Files/Git/bin:$PATH"
-          bash $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh base
+          $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh base
 

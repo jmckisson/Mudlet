@@ -94,6 +94,7 @@ echo "MSYSTEM is: ${MSYSTEM}"
 echo "PATH is now: ${PATH}"
 echo ""
 
+env
 ls ${MINGW_INTERNAL_BASE_DIR}
 
 # Options to consider:
