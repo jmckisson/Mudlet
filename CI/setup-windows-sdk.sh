@@ -134,30 +134,29 @@ if [ "${LEVEL}" = "full" ]; then
     "mingw-w64-${BUILDCOMPONENT}-clang" \
     "mingw-w64-${BUILDCOMPONENT}-ninja"
  else
-  /usr/bin/pacman -S --needed --noconfirm \
-    git \
-    man \
-    rsync \
-    "mingw-w64-${BUILDCOMPONENT}-toolchain" \
-    "mingw-w64-${BUILDCOMPONENT}-qt5" \
-    "mingw-w64-${BUILDCOMPONENT}-qt5-base-debug" \
-    "mingw-w64-${BUILDCOMPONENT}-qt5-multimedia-debug" \
-    "mingw-w64-${BUILDCOMPONENT}-qt5-svg-debug" \
-    "mingw-w64-${BUILDCOMPONENT}-qt5-speech-debug" \
-    "mingw-w64-${BUILDCOMPONENT}-qt5-imageformats-debug" \
-    "mingw-w64-${BUILDCOMPONENT}-qt5-winextras-debug" \
-    "mingw-w64-${BUILDCOMPONENT}-pcre" \
-    "mingw-w64-${BUILDCOMPONENT}-libzip" \
-    "mingw-w64-${BUILDCOMPONENT}-ntldd" \
-    "mingw-w64-${BUILDCOMPONENT}-pugixml" \
-    "mingw-w64-${BUILDCOMPONENT}-lua51" \
-    "mingw-w64-${BUILDCOMPONENT}-lua51-lpeg" \
-    "mingw-w64-${BUILDCOMPONENT}-lua51-lsqlite3" \
-    "mingw-w64-${BUILDCOMPONENT}-hunspell" \
-    "mingw-w64-${BUILDCOMPONENT}-zlib" \
-    "mingw-w64-${BUILDCOMPONENT}-boost" \
-    "mingw-w64-${BUILDCOMPONENT}-yajl" \
-    "mingw-w64-${BUILDCOMPONENT}-lua-luarocks"
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar git
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar man
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar rsync
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-toolchain
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-base-debug
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-multimedia-debug
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-svg-debug
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-speech-debug
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-imageformats-debug
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-qt5-winextras-debug
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-pcre
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-libzip
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-ntldd
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-pugixml
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-lua51
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-lua51-lpeg
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-lua51-lsqlite3
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-hunspell
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-zlib
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-boost
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-yajl
+    /usr/bin/pacman -S --needed --noconfirm --noprogressbar mingw-w64-${BUILDCOMPONENT}-lua-luarocks
 fi
 
 echo ""
