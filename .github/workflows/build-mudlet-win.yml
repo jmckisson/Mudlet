@@ -22,9 +22,13 @@ jobs:
           update: true
           install: git mingw-w64-i686-gcc
       - name: Change to CI Directory'
-        run: cd $GITHUB_WORKSPACE/CI
+        run: |
+          echo $GITHUB_WORKSPACE
+          cd $GITHUB_WORKSPACE/CI
+          ls
       - name: CI-Build
         run: |
           echo 'Running in MSYS2!'
+          pwd
           ./setup-windows.sdk.sh base
 
