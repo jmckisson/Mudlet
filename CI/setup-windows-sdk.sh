@@ -94,12 +94,12 @@ echo "MSYSTEM is: ${MSYSTEM}"
 echo "PATH is now: ${PATH}"
 echo ""
 
-echo "C:"
-ls /
-echo "${MINGW_INTERNAL_BASE_DIR}/etc:"
-ls ${MINGW_INTERNAL_BASE_DIR}/etc
-echo "msys64/etc"
-ls /msys64/etc
+echo "Listing C:/etc"
+ls /etc
+echo "Listing ${MINGW_INTERNAL_BASE_DIR}/etc:"
+ls /c/${MINGW_INTERNAL_BASE_DIR}/etc
+echo "Listing c/msys64/etc:"
+ls /c/msys64/etc
 
 
 # Options to consider:
