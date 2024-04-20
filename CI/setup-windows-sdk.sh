@@ -94,7 +94,13 @@ echo "MSYSTEM is: ${MSYSTEM}"
 echo "PATH is now: ${PATH}"
 echo ""
 
+echo "C:"
+ls /
+echo "${MINGW_INTERNAL_BASE_DIR}/etc:"
 ls ${MINGW_INTERNAL_BASE_DIR}/etc
+echo "msys64/etc"
+ls /msys64/etc
+
 
 # Options to consider:
 # --Sy = Sync, refresh as well as installing the specified packages
