@@ -395,7 +395,7 @@ unix:!macx {
             -LD:\\a\\_temp\\msys64\\mingw32/lib \
             -LD:\\a\\_temp\\msys64\\mingw32/bin \
             -llua5.1 \
-            -llibhunspell-1.7-0
+            -llibhunspell-1.7
 
         #gcc -O2 -fPIC -c -o src/common.o -ID:/a/_temp/msys64/mingw32/include/lua5.1 src/common.c -DVERSION="2.9.2" -DPCRE2_CODE_UNIT_WIDTH=8 -ID:\a\_temp\msys64\mingw32/include
         #$${MINGW_BASE_DIR_TEST}/include/lua5.1 \

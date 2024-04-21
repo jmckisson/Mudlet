@@ -40,4 +40,6 @@ jobs:
         run: |
           export BUILD_CONFIG=release
           $GITHUB_WORKSPACE/CI/build-mudlet-for-windows.sh
+      - name: Package Mudlet
+        run: $GITHUB_WORKSPACE/CI/package-mudlet-for-windows.sh
 
