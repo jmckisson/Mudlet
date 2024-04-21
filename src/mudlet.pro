@@ -397,8 +397,8 @@ unix:!macx {
             -llibhunspell-1.7-0
 
         #gcc -O2 -fPIC -c -o src/common.o -ID:/a/_temp/msys64/mingw32/include/lua5.1 src/common.c -DVERSION="2.9.2" -DPCRE2_CODE_UNIT_WIDTH=8 -ID:\a\_temp\msys64\mingw32/include
+        #$${MINGW_BASE_DIR_TEST}/include/lua5.1 \
         INCLUDEPATH += \
-            $${MINGW_BASE_DIR_TEST}/include/lua5.1 \
             D:\\a\\_temp\\msys64\\mingw32/include \
             D:/a/_temp/msys64/mingw32/include/lua5.1 \
             $${MINGW_BASE_DIR_TEST}/include/pugixml

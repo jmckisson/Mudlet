@@ -38,7 +38,6 @@ jobs:
           $GITHUB_WORKSPACE/CI/setup-windows-sdk.sh base
       - name: Mudlet Build
         run: |
-          pacman -Qs lua
           export BUILD_CONFIG=release
           $GITHUB_WORKSPACE/CI/build-mudlet-for-windows.sh
 
