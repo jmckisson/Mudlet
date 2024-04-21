@@ -39,7 +39,6 @@ jobs:
       - name: Mudlet Build
         run: |
           pacman -Qs lua
-          pacman -R mingw-w64-i686-lua
           export BUILD_CONFIG=release
           $GITHUB_WORKSPACE/CI/build-mudlet-for-windows.sh
 
