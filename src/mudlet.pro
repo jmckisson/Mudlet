@@ -397,8 +397,8 @@ unix:!macx {
             -llibhunspell-1.7-0
 
         INCLUDEPATH += \
-            /a/_tmp/msys64/mingw32/include/lua5.1 \
-            /a/_tmp/msys64/mingw32/include/pugixml
+            D:/a/_tmp/msys64/mingw32/include/lua5.1 \
+            D:/a/_tmp/msys64/mingw32/include/pugixml
              
         message("MSYS2 environment, Lua include directory "/mingw32/include/lua5.1"...")
     }
