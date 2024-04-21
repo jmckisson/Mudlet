@@ -309,4 +309,6 @@ cd ~ || exit 1
 echo "  ... setup-windows-sdk.sh shell script finished."
 echo ""
 
+pacman -Q
+
 exit 0
