@@ -39,5 +39,6 @@ jobs:
       - name: Mudlet Build
         run: |
           export BUILD_CONFIG=release
+          ls /mingw32/include
           $GITHUB_WORKSPACE/CI/build-mudlet-for-windows.sh
 
