@@ -392,15 +392,15 @@ unix:!macx {
 "'C:\msys64\mingw32' {64 Bit Mudlet built on a 64 Bit Host}\\n"))
         }
         LIBS +=  \
-            -L/mingw32/bin \
+            -L$${MINGW_BASE_DIR_TEST}/bin \
             -llua5.1 \
             -llibhunspell-1.7-0
 
         INCLUDEPATH += \
-            D:/a/_tmp/msys64/mingw32/include/lua5.1 \
-            D:/a/_tmp/msys64/mingw32/include/pugixml
+            $${MINGW_BASE_DIR_TEST}/include/lua5.1 \
+            $${MINGW_BASE_DIR_TEST}/include/pugixml
              
-        message("MSYS2 environment, Lua include directory "/mingw32/include/lua5.1"...")
+        message("MSYS2 environment, Lua include directory "$${MINGW_BASE_DIR_TEST}/include/lua5.1"...")
     }
 
     LIBS += \
