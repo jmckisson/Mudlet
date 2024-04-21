@@ -39,8 +39,5 @@ jobs:
       - name: Mudlet Build
         run: |
           export BUILD_CONFIG=release
-          echo "======Displaying lua.h======"
-          cat /mingw32/include/lua5.1/lua.h
-          echo "============================"
           $GITHUB_WORKSPACE/CI/build-mudlet-for-windows.sh
 
