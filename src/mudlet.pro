@@ -392,7 +392,8 @@ unix:!macx {
 "'C:\msys64\mingw32' {64 Bit Mudlet built on a 64 Bit Host}\\n"))
         }
         LIBS +=  \
-            -L$${MINGW_BASE_DIR_TEST}/bin \
+            -LD:\\a\\_temp\\msys64\\mingw32/lib \
+            -LD:\\a\\_temp\\msys64\\mingw32/bin \
             -llua5.1 \
             -llibhunspell-1.7-0
 
