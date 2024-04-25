@@ -1,8 +1,7 @@
 name: 🔨 Build Mudlet
 on:
   push:
-    branches: [master, development, release-*]
-    tags: [Mudlet-*]
+    branches: [mudlet-64]
   pull_request:
   workflow_dispatch:
   schedule:
@@ -42,7 +41,7 @@ jobs:
             run_tests: 'true'
           - os: windows-2019
             buildname: 'windows'
-            triplet: i686-w64-mingw32
+            triplet: x86_64-w64-mingw32
             # compiler: flag not used in windows pipeline
             qt: '5.14.2'
 
@@ -61,7 +60,7 @@ jobs:
       if: matrix.os == 'windows-2019'
       uses: msys2/setup-msys2@v2
       with:
-        msystem: MINGW32
+        msystem: MINGW64
         update: true
           #install: >-
           #  base-devel
