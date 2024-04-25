@@ -382,11 +382,7 @@ unix:!macx {
              "$${MINGW_BASE_DIR_TEST}\\lib\\include"
 
     } else {
-<<<<<<< HEAD
 
-        # For users/developers building with MSYS2 on Windows:
-=======
->>>>>>> development
         isEmpty( MINGW_BASE_DIR_TEST ) {
             error($$escape_expand("Build aborted as environmental variable MINGW_BASE_DIR not set to the root of \\n"\
             "the Mingw32 or Mingw64 part (depending on the number of bits in your desired\\n"\
@@ -395,22 +391,7 @@ unix:!macx {
             "'C:\msys64\mingw32' {32 Bit Mudlet built on a 64 Bit Host}\\n"\
             "'C:\msys64\mingw32' {64 Bit Mudlet built on a 64 Bit Host}\\n"))
         }
-<<<<<<< HEAD
-        LIBS +=  \
-            -LD:\\a\\_temp\\msys64\\mingw32/lib \
-            -LD:\\a\\_temp\\msys64\\mingw32/bin \
-            -llua5.1 \
-            -llibhunspell-1.7
 
-        #gcc -O2 -fPIC -c -o src/common.o -ID:/a/_temp/msys64/mingw32/include/lua5.1 src/common.c -DVERSION="2.9.2" -DPCRE2_CODE_UNIT_WIDTH=8 -ID:\a\_temp\msys64\mingw32/include
-        #$${MINGW_BASE_DIR_TEST}/include/lua5.1 \
-        INCLUDEPATH += \
-            D:\\a\\_temp\\msys64\\mingw32/include \
-            D:/a/_temp/msys64/mingw32/include/lua5.1 \
-            $${MINGW_BASE_DIR_TEST}/include/pugixml
-             
-        message("MSYS2 environment, Lua include directory "$${MINGW_BASE_DIR_TEST}/include/lua5.1"...")
-=======
         GITHUB_WORKSPACE_TEST = $$(GITHUB_WORKSPACE)
         isEmpty( GITHUB_WORKSPACE_TEST ) {
             # For users/developers building with MSYS2 on Windows:
@@ -435,7 +416,7 @@ unix:!macx {
                  D:/a/_temp/msys64/mingw32/include/lua5.1 \
                  $${MINGW_BASE_DIR_TEST}/include/pugixml
         }
->>>>>>> development
+
     }
 
     LIBS += \
