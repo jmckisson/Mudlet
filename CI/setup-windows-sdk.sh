@@ -174,7 +174,7 @@ if [ "${MSYSTEM}" = "MINGW64" ]; then
       "mingw-w64-${BUILDCOMPONENT}-qt-creator"
   else
     /usr/bin/pacman -S --needed --noconfirm \
-      "mingw-w64-${BUILDCOMPONENT}-qtkeychain-qt6"
+      "mingw-w64-${BUILDCOMPONENT}-qtkeychain-qt5"
   fi
   echo "    Completed"
 else
