@@ -267,7 +267,6 @@ jobs:
         key: ccache-${{matrix.os}}-${{matrix.compiler}}-${{matrix.qt}}-${{ github.sha }}
         restore-keys: ccache-${{matrix.os}}-${{matrix.compiler}}-${{matrix.qt}}
         save-always: true
-      if: matrix.os != 'windows-latest'
 
     - name: (Linux) Set build info
       if: runner.os == 'Linux'
