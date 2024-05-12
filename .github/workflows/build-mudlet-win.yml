@@ -1,7 +1,7 @@
 name: 🔨 Build Mudlet (windows)
 on:
   push:
-    branches: [master, development, release-*]
+    branches: [gha_debug, master, development, release-*]
     tags: [Mudlet-*]
   pull_request:
   workflow_dispatch:
@@ -12,7 +12,7 @@ jobs:
   compile-mudlet:
     name: ${{matrix.buildname}}
     runs-on: ${{matrix.os}}
-    if: ${{ github.repository_owner == 'Mudlet' }}
+    if: ${{ github.repository_owner == 'Mudlet' }} || ${{ github.repository_owner == 'jmckisson' }} 
     strategy:
       fail-fast: false
       matrix:
