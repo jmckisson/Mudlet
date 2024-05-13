@@ -186,9 +186,12 @@ else
   echo "=== Cloning installer project ==="
   git clone https://github.com/Mudlet/installers.git "$GITHUB_WORKSPACE/installers"
   cd "$GITHUB_WORKSPACE/installers/windows" || exit 1
+  
+  echo "=== Installing NuGet ==="
+  curl -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
   echo "=== Installing Squirrel for Windows ==="
-  nuget install squirrel.windows -ExcludeVersion
+  mono nuget.exe install squirrel.windows -ExcludeVersion
 
   echo "=== Setting up directories ==="
   SQUIRRELWIN="$GITHUB_WORKSPACE/squirrel-packaging-prep"
@@ -221,9 +224,6 @@ else
     fi
     sed -i 's/<title>Mudlet<\/title>/<title>Mudlet x${BUILD_BITNESS}<\/title>/' "$NuSpec"
   fi
-  
-  #Install nuget
-  curl -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
   # Create NuGet package
   mono nuget.exe pack "$NuSpec" -Version "$VersionAndSha" -BasePath "$SQUIRRELWIN" -OutputDirectory "$SQUIRRELWIN"
