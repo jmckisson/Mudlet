@@ -141,9 +141,12 @@ else
     # Tagged build, this is a release or a PTB build, include the updater
     export WITH_UPDATER="YES"
 fi
+export WITH_UPDATER="YES"
+
 # This one is VITAL as some things in the code have to be tweaked to be
 # different compared to the CI/CB build environment (or the
 # setup-windows-sdk.ps) one!
+
 export WITH_MAIN_BUILD_SYSTEM="NO"
 
 echo "Running qmake to make MAKEFILE ..."

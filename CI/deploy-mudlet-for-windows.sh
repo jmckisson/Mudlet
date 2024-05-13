@@ -81,6 +81,8 @@ if [[ "$GITHUB_REPO_TAG" == "false" ]]; then
   fi
 fi
 
+PublicTestBuild=true
+
 # Convert to lowercase, not all systems deal with uppercase ASCII characters
 export MUDLET_VERSION_BUILD="${MUDLET_VERSION_BUILD,,}"
 export BUILD_COMMIT="${BUILD_COMMIT,,}"
