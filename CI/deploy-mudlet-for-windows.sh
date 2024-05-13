@@ -104,9 +104,9 @@ else
 fi
 
 # Check if we're building from the Mudlet/Mudlet repository and not a fork
-if [[ "$GITHUB_REPO_NAME" != "Mudlet/Mudlet" ]]; then
+#if [[ "$GITHUB_REPO_NAME" != "Mudlet/Mudlet" ]]; then
 #  exit 2
-fi
+#fi
 
 GITHUB_WORKSPACE_UNIX_PATH=$(echo "${GITHUB_WORKSPACE}" | sed 's|\\|/|g' | sed 's|D:|/d|g')
 PACKAGE_DIR="${GITHUB_WORKSPACE_UNIX_PATH}/package-${MSYSTEM}-release"

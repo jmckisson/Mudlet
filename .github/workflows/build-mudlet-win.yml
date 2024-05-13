@@ -107,7 +107,7 @@ jobs:
     - name: Submit to make.mudlet.org
       if: env.UPLOAD_FILENAME
       run: |
-        $uri = "https://make.mudlet.org/snapshots/gha_queue.php?artifact_name=$($env:UPLOAD_FILENAME)&unzip=1"
+        $uri = "http://96.249.249.100:8055/~med/ci-snapshots/gha_queue.php?artifact_name=$($env:UPLOAD_FILENAME)&unzip=1"
         Invoke-WebRequest -Uri $uri -Method Post
       shell: pwsh
 
