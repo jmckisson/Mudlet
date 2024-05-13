@@ -129,7 +129,8 @@ fi
     "mingw-w64-${BUILDCOMPONENT}-boost" \
     "mingw-w64-${BUILDCOMPONENT}-yajl" \
     "mingw-w64-${BUILDCOMPONENT}-lua-luarocks" \
-    "mingw-w64-${BUILDCOMPONENT}-7zip" 
+    "mingw-w64-${BUILDCOMPONENT}-7zip" \
+    "mingw-w64-${BUILDCOMPONENT}-mono"
 
 echo ""
 echo "    Completed"

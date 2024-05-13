@@ -221,9 +221,12 @@ else
     fi
     sed -i 's/<title>Mudlet<\/title>/<title>Mudlet x${BUILD_BITNESS}<\/title>/' "$NuSpec"
   fi
+  
+  #Install nuget
+  curl -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
   # Create NuGet package
-  nuget pack "$NuSpec" -Version "$VersionAndSha" -BasePath "$SQUIRRELWIN" -OutputDirectory "$SQUIRRELWIN"
+  mono nuget.exe pack "$NuSpec" -Version "$VersionAndSha" -BasePath "$SQUIRRELWIN" -OutputDirectory "$SQUIRRELWIN"
 
   echo "=== Creating installers from Nuget package ==="
   if [[ "$PublicTestBuild" == "true" ]]; then
