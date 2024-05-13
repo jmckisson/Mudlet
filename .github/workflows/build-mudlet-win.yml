@@ -62,6 +62,9 @@ jobs:
     - name: check ccache stats prior to build
       shell: msys2 {0}
       run: ccache --zero-stats --show-stats
+      
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
         
     - name: (Windows) Build
       shell: msys2 {0}
@@ -101,8 +104,7 @@ jobs:
         name: ${{env.UPLOAD_FILENAME}}
         path: ${{env.FOLDER_TO_UPLOAD}}
         
-    #- name: Setup tmate session
-    #  uses: mxschmitt/action-tmate@v3
+    
       
     - name: Submit to make.mudlet.org
       if: env.UPLOAD_FILENAME

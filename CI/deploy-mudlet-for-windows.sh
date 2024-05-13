@@ -236,6 +236,11 @@ else
     TestBuildString=""
     InstallerIconFile="$GITHUB_WORKSPACE/src/icons/mudlet.ico"
   fi
+  
+  # Ensure 64 bit build is properly tagged
+  if [ "${MSYSTEM}" = "MINGW64" ]; then
+    TestBuildString="_64_$TestBuildString"
+  fi
 
   nupkg_path="$GITHUB_WORKSPACE/squirrel-packaging-prep/Mudlet$TestBuildString.$VersionAndSha.nupkg"
   if [[ ! -f "$nupkg_path" ]]; then
