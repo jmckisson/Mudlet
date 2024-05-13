@@ -116,7 +116,6 @@ fi
     man \
     rsync \
     ccache \
-    mono \
     "mingw-w64-${BUILDCOMPONENT}-toolchain" \
     "mingw-w64-${BUILDCOMPONENT}-pcre" \
     "mingw-w64-${BUILDCOMPONENT}-libzip" \
