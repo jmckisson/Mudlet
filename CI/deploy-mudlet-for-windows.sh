@@ -51,6 +51,10 @@ fi
 
 cd "$GITHUB_WORKSPACE" || exit 1
 
+# Add nuget location to PATH
+PATH="/c/ProgramData/Chocolatey/bin:${PATH}"
+export PATH
+
 PublicTestBuild=false
 # Check if GITHUB_REPO_TAG is "false"
 if [[ "$GITHUB_REPO_TAG" == "false" ]]; then
@@ -187,11 +191,11 @@ else
   git clone https://github.com/Mudlet/installers.git "$GITHUB_WORKSPACE/installers"
   cd "$GITHUB_WORKSPACE/installers/windows" || exit 1
   
-  echo "=== Installing NuGet ==="
-  curl -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+  #echo "=== Installing NuGet ==="
+  #curl -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
   echo "=== Installing Squirrel for Windows ==="
-  mono nuget.exe install squirrel.windows -ExcludeVersion
+  nuget install squirrel.windows -ExcludeVersion
 
   echo "=== Setting up directories ==="
   SQUIRRELWIN="$GITHUB_WORKSPACE/squirrel-packaging-prep"
@@ -226,7 +230,7 @@ else
   fi
 
   # Create NuGet package
-  mono nuget.exe pack "$NuSpec" -Version "$VersionAndSha" -BasePath "$SQUIRRELWIN" -OutputDirectory "$SQUIRRELWIN"
+  nuget pack "$NuSpec" -Version "$VersionAndSha" -BasePath "$SQUIRRELWIN" -OutputDirectory "$SQUIRRELWIN"
 
   echo "=== Creating installers from Nuget package ==="
   if [[ "$PublicTestBuild" == "true" ]]; then
