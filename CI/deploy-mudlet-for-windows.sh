@@ -221,12 +221,12 @@ else
     else
       sed -i 's/<id>Mudlet<\/id>/<id>Mudlet-PublicTestBuild<\/id>/' "$NuSpec"
     fi
-    sed -i 's/<title>Mudlet<\/title>/<title>Mudlet x${BUILD_BITNESS} (Public Test Build)<\/title>/' "$NuSpec"
+    sed -i "s/<title>Mudlet<\/title>/<title>Mudlet x${BUILD_BITNESS} (Public Test Build)<\/title>/" "$NuSpec"
   else
     if [ "${MSYSTEM}" = "MINGW64" ]; then
       sed -i "s/<id>Mudlet<\/id>/<id>Mudlet_${BUILD_BITNESS}_<\/id>/" "$NuSpec"
     fi
-    sed -i 's/<title>Mudlet<\/title>/<title>Mudlet x${BUILD_BITNESS}<\/title>/' "$NuSpec"
+    sed -i "s/<title>Mudlet<\/title>/<title>Mudlet x${BUILD_BITNESS}<\/title>/" "$NuSpec"
   fi
 
   # Create NuGet package
@@ -251,13 +251,21 @@ else
     echo "=== ERROR: nupkg doesn't exist as expected! Build aborted."
     exit 4
   fi
+  
+  # Create self signed code signing cert for testing purposes
+  openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa_4096 -keyout mykey.out -out mypem.pem
+  
+  openssl pkcs12 -export -out myp12.p12 -inkey mykey.key -in mypem.pem
 
   # Execute Squirrel to create the installer
   ./squirrel.windows/tools/Squirrel --releasify "$nupkg_path" \
     --releaseDir "$GITHUB_WORKSPACE/squirreloutput" \
     --loadingGif "$GITHUB_WORKSPACE/installers/windows/splash-installing-2x.png" \
     --no-msi --setupIcon "$InstallerIconFile" \
-    -n "/a /f $GITHUB_WORKSPACE/installers/windows/code-signing-certificate.p12 /p $WIN_SIGNING_PASS /fd sha256 /tr http://timestamp.digicert.com /td sha256"
+    -n "/a /f myp12.p12 /fd sha256 /tr http://timestamp.digicert.com /td sha256"
+    
+    
+    #-n "/a /f $GITHUB_WORKSPACE/installers/windows/code-signing-certificate.p12 /p $WIN_SIGNING_PASS /fd sha256 /tr http://timestamp.digicert.com /td sha256"
 
   echo "=== Removing old directory content of release folder ==="
   rm -rf "${PACKAGE_DIR:?}/*"
