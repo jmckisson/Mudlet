@@ -325,6 +325,9 @@ else
     "-F do=Add File"
   fi
   
+  echo "=== Installing NodeJS ==="
+  choco install nodejs --version="22.1.0"
+  
   echo "=== Installing dblsqd-cli ==="
   npm install -g dblsqd-cli
   dblsqd login -e "https://api.dblsqd.com/v1/jsonrpc" -u "$DBLSQD_USER" -p "$DBLSQD_PASS"
