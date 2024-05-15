@@ -328,8 +328,9 @@ else
   echo "=== Installing NodeJS ==="
   choco install nodejs --version="22.1.0"
   
-  ls "C:\ProgramData\chocolatey\lib\nodejs"
-  ls "C:\ProgramData\chocolatey\bin"
+  cat "C:\ProgramData\chocolatey\logs\chocolatey.log"
+  #ls "C:\ProgramData\chocolatey\lib\nodejs"
+  #ls "C:\ProgramData\chocolatey\bin"
   
   echo "=== Installing dblsqd-cli ==="
   npm install -g dblsqd-cli
