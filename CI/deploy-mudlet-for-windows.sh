@@ -190,9 +190,6 @@ else
   echo "=== Cloning installer project ==="
   git clone https://github.com/Mudlet/installers.git "$GITHUB_WORKSPACE/installers"
   cd "$GITHUB_WORKSPACE/installers/windows" || exit 1
-  
-  #echo "=== Installing NuGet ==="
-  #curl -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
   echo "=== Installing Squirrel for Windows ==="
   nuget install squirrel.windows -ExcludeVersion
@@ -327,10 +324,7 @@ else
   
   echo "=== Installing NodeJS ==="
   choco install nodejs --version="22.1.0"
-  
-  cat "C:\ProgramData\chocolatey\logs\chocolatey.log"
-  #ls "C:\ProgramData\chocolatey\lib\nodejs"
-  #ls "C:\ProgramData\chocolatey\bin"
+  PATH="/c/Program Files/nodejs/:/c/npm/prefix/:${PATH}"
   
   echo "=== Installing dblsqd-cli ==="
   npm install -g dblsqd-cli
