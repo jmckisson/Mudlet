@@ -253,10 +253,10 @@ else
   fi
   
   # Create self signed code signing cert for testing purposes
-  openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa:4096 -keyout mykey.key -out mypem.pem \
+  MSYS2_ARG_CONV_EXCL="*" openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa:4096 -keyout mykey.key -out mypem.pem \
   -subj "/C=US/ST=VA/L=Yorktown/O=YourOrganization/OU=YourOrganizationalUnit/CN=jmckisson.com"
   
-  openssl pkcs12 -export -out myp12.p12 -inkey mykey.key -in mypem.pem
+  MSYS2_ARG_CONV_EXCL="*" openssl pkcs12 -export -out myp12.p12 -inkey mykey.key -in mypem.pem
 
   # Execute Squirrel to create the installer
   ./squirrel.windows/tools/Squirrel --releasify "$nupkg_path" \
