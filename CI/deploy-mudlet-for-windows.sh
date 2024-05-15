@@ -252,8 +252,9 @@ else
     exit 4
   fi
   
+  export MSYS2_ARG_CONV_EXCL="*"
   # Create self signed code signing cert for testing purposes
-  MSYS2_ARG_CONV_EXCL="*" openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa:4096 -keyout mykey.key -out mypem.pem \
+   openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa:4096 -keyout mykey.key -out mypem.pem \
   -subj "/C=US/ST=VA/L=Yorktown/O=YourOrganization/OU=YourOrganizationalUnit/CN=jmckisson.com"
   
   MSYS2_ARG_CONV_EXCL="*" openssl pkcs12 -export -out myp12.p12 -inkey mykey.key -in mypem.pem
