@@ -62,9 +62,6 @@ jobs:
     - name: check ccache stats prior to build
       shell: msys2 {0}
       run: ccache --zero-stats --show-stats
-      
-    #- name: Setup tmate session
-    #  uses: mxschmitt/action-tmate@v3
         
     - name: (Windows) Build
       shell: msys2 {0}
@@ -96,6 +93,9 @@ jobs:
         GITHUB_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
         GITHUB_PULL_REQUEST_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
       run: $GITHUB_WORKSPACE/CI/deploy-mudlet-for-windows.sh
+      
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
  
     - name: Upload packaged Mudlet
       uses: actions/upload-artifact@v4
